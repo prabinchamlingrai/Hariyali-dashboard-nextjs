@@ -5,7 +5,7 @@ export default function Header({toggleCollapse,setToggleCollapse}:{toggleCollaps
     const SideBarToggle=() =>{
         setToggleCollapse(!toggleCollapse);
     }
-    const headerStyle= classNames("fixed bg-[#31353d] w-full z-0 px-4 shadow-sm shadow-slate-500/40 ",
+    const headerStyle= classNames("fixed bg-[#fcfdff] w-full z-0 px-4 shadow-sm shadow-slate-500/40 ",
     {
         ["sm:pl-[20rem]"]:!toggleCollapse,
         ["sm:pl-[5.6rem]"]:toggleCollapse,

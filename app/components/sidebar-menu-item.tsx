@@ -16,7 +16,7 @@ export const SideBarMenuItem = ({ item, toggleCollapse }: { item: SideNavItem, t
         <>
             {item.submenu ? (
                 <div className="rounded-md min-w-[18px]">
-                    <a className={`flex items-center min-h-[40px] h-full text-[#6e768e] py-2 px-4 hover:text-white rounded-md transition duration-200 ${pathName.includes(item.path) ? "rounded-md text-white light:text-black light:bg-[#efefef] bg-[#3a3f48]" : ""}`} onClick={toggleSubMenu}>
+                    <a className={`flex items-center min-h-[40px] h-full text-[#6e768e] py-2 px-4 hover:text-[#f6c177] rounded-md transition duration-200 ${pathName.includes(item.path) ? "rounded-md text-white light:text-black light:bg-[#efefef] bg-[#38a745]" : ""}`} onClick={toggleSubMenu}>
                         {item.icon}
                         {
                             !toggleCollapse &&
@@ -27,10 +27,10 @@ export const SideBarMenuItem = ({ item, toggleCollapse }: { item: SideNavItem, t
                         }
                     </a>
                     {subMenuOpen && !toggleCollapse &&
-                        <div className="bg-[#3a3f48] border-1-4">
+                        <div className="bg-[#f7f8f9] border-1-4">
                             <div className="grid gap-y-2 px-10 py-3 leading-5">
                                 {item.subMenuItems.map((subItem) => (
-                                    <Link key={subItem.path} href={subItem.path} className={`text-[#6e768e] py-2 px-4 hover:text-white transition duration-200 ${subItem.path === pathName ? "text-white" : ""}`}>
+                                    <Link key={subItem.path} href={subItem.path} className={`text-[#6e768e] py-2 px-4 hover:text-[#f6c177] transition duration-200 ${subItem.path === pathName ? "text-white" : ""}`}>
                                         <span>{subItem.title}</span>
                                     </Link>
                                 ))}
@@ -39,7 +39,7 @@ export const SideBarMenuItem = ({ item, toggleCollapse }: { item: SideNavItem, t
                     }
                 </div>
             ) : (
-                <Link href={item.path} className={`flex items-center min-h-[40px] h-full text-[#6e768e] py-2 px-4 hover:text-white rounded-md transition duration-200 ${item.path === pathName ? "rounded-md text-green-100 light:text-black light:bg-[#efefef] bg-[#418441]" : ""}`}>
+                <Link href={item.path} className={`flex items-center min-h-[40px] h-full text-[#6e768e] py-2 px-4 hover:text-[#f6c177] rounded-md transition duration-200 ${item.path === pathName ? "rounded-md text-green-100 light:text-black light:bg-[#efefef] bg-[#418441]" : ""}`}>
                     {item.icon}
                    {!toggleCollapse && <span className="ml-3 leading-6 font-semibold">{item.title}</span>}
                 </Link>
