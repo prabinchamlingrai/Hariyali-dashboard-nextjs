@@ -6,6 +6,7 @@ import SideBar from "./components/sidebar"
 import Header from "./components/header";
 import PageWrapper from "./components/pagewrapper";
 import { useState } from "react";
+import SearchInput from "./components/SearchInput";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -24,12 +25,20 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
+        <div className="flex flex-col" gap-10 items-center p-6>
+          {/* <SearchInput /> */}
+          <div className="flex flex-col items-center w-full">
+
+          </div>
+
+
         <div className="flex min-h-screen">
           <SideBar toggleCollapse={toggleCollapse} />
           <Header toggleCollapse={toggleCollapse} setToggleCollapse={setToggleCollapse}/>
           <PageWrapper toggleCollapse={toggleCollapse}>
             {children}
           </PageWrapper>
+        </div>
         </div>
       </body>
     </html>
