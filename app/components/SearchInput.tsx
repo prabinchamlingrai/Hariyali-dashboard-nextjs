@@ -9,7 +9,7 @@ const SearchInput = () => {
         <input
                 value={searchQuery || ""}
                 onChange={(event) => setSearchQuery(event.target.value)}
-                className=" px-5 py-1 w-3/3 sm:px-5 sm:py-3 flex-1 text-center text-zinc-200 bg-green-500 focus:bg-white rounded-full focus:outline-none focus:ring-[2px] focus:ring-green-700 placeholder:text-yellow-400"
+                className=" px-5 py-1 w-3/3 sm:px-5 sm:py-3 flex-1 text-center text-zinc-200 bg-green-500 focus:bg-white rounded-full focus:outline-none focus:ring-[2px] focus:ring-green-700 placeholder:text-yellow-300"
                 placeholder="Search for ?"
               />
 );
@@ -76,7 +76,7 @@ export default SearchInput;
 //       <input
 //         value={searchQuery || ""}
 //         onChange={(event) => setSearchQuery(event.target.value)}
-//         className="px-5 py-1 w-3/3 sm:px-5 sm:py-3 flex-1 text-zinc-200 bg-zinc-800 focus:bg-black rounded-full focus:outline-none focus:ring-[1px] focus:ring-green-700 placeholder:text-zinc-400"
+//         className=" px-5 py-1 w-3/3 sm:px-5 sm:py-3 flex-1 text-center text-zinc-200 bg-green-500 focus:bg-white rounded-full focus:outline-none focus:ring-[2px] focus:ring-green-700 placeholder:text-yellow-400"
 //         placeholder="What are you looking for?"
 //       />
 //     </form>
