@@ -17,7 +17,7 @@ export default function Header({toggleCollapse,setToggleCollapse}:{toggleCollaps
             <div className="flex items-center justify-between h-16">
             <div>
 
-            <button onClick={SideBarToggle} className="order-2 sm:order-1 bg-[#366f36] text-[#fafafa] hover:bg-[#71da71] ml-3 rounded-md w-[30px] shadow-md shadow-black/10 transition duration-300 ease-in-out flex items-center justify-center">
+            <button onClick={SideBarToggle} className="order-2 sm:order-1 bg-[#366f36] text-[#fafafa] hover:bg-[#71da71] ml-3 rounded-md w-[40px] h-[30px] shadow-md shadow-black/10 transition duration-300 ease-in-out flex items-center justify-center">
                 <BsList></BsList>
             </button>
             </div>

@@ -42,9 +42,9 @@
 //         }
 //       ];
   
-
 import React from "react";
-import { BsGear, BsHouseDoor, BsKanban, BsListUl, BsQuestionCircle, BsEnvelope, BsPerson } from "react-icons/bs";
+
+import { BsGear, BsHouseDoor, BsListUl, BsPerson } from "react-icons/bs";
 import { SideNavItem } from "./types/types";
 
 export const SIDENAV_ITEMS: SideNavItem[] = [
@@ -92,4 +92,5 @@ export const SIDENAV_ITEMS: SideNavItem[] = [
     ]
   }
 ];
+
 

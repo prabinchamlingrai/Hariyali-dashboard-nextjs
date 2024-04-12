@@ -8,7 +8,6 @@ const MyImageComponent: React.FC = () => {
         alt=""
         width={150}
         height={35}
-        layout="fixed"
         objectFit="cover"
       />
     </div>
