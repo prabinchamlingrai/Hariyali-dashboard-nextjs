@@ -1,164 +1,190 @@
-/**
- * eslint-disable @next/next/no-img-element
- *
- * @format
- */
-
-/** @format */
-"use client";
-
-DataTable
-// import { DataTable } from "@/components/DataTable";
-import { ColumnDef } from "@tanstack/react-table";
-import React from "react";
-// import PageTitle from "@/components/PageTitle";
-import { DataTable } from "@/app/components/DataTable";
-import PageTitle from "@/components/ui/PageTitle";
+import React from 'react';
+import { ColumnDef } from '@tanstack/react-table';
+import { DataTable } from '@/app/components/DataTable';
+import PageTitle from '@/components/ui/PageTitle';
+import AddMerchantButton from '@/app/components/AddMerchantButton';
 
 type Props = {};
-type Payment = {
+
+type Merchant = {
+  number: number;
   name: string;
+  address: string;
+  projectChiefName: string;
+  vatTax: string;
   email: string;
-  lastOrder: string;
-  method: string;
+  panVatNumber: string;
 };
 
-const columns: ColumnDef<Payment>[] = [
+const columns: ColumnDef<Merchant>[] = [
   {
-    accessorKey: "name",
-    header: "Name",
-    cell: ({ row }) => {
-      return (
-        <div className="flex gap-2 items-center">
-          <img
-            className="h-10 w-10"
-            src={`https://api.dicebear.com/7.x/lorelei/svg?seed=${row.getValue(
-              "name"
-            )}`}
-            alt="user-image"
-          />
-          <p>{row.getValue("name")} </p>
-        </div>
-      );
-    }
+    accessorKey: 'number',
+    header: 'Number',
   },
   {
-    accessorKey: "email",
-    header: "Email"
+    accessorKey: 'name',
+    header: 'Merchant Name',
   },
   {
-    accessorKey: "lastOrder",
-    header: "Last Order"
+    accessorKey: 'address',
+    header: 'Address',
   },
   {
-    accessorKey: "method",
-    header: "Method"
-  }
+    accessorKey: 'projectChiefName',
+    header: 'Project Chief Name',
+  },
+  {
+    accessorKey: 'vatTax',
+    header: 'VAT/Tax',
+  },
+  {
+    accessorKey: 'email',
+    header: 'Email ID',
+  },
+  {
+    accessorKey: 'panVatNumber',
+    header: 'PAN/VAT Number',
+  },
 ];
 
-const data: Payment[] = [
+const data: Merchant[] = [
   {
-    name: "John Doe",
-    email: "john@example.com",
-    lastOrder: "2023-01-01",
-    method: "Credit Card"
+    number: 1,
+    name: 'John Doe',
+    address: '123 Main St',
+    projectChiefName: 'Alice Johnson',
+    vatTax: '123456789',
+    email: 'john@example.com',
+    panVatNumber: 'ABC123XYZ',
   },
   {
-    name: "Alice Smith",
-    email: "alice@example.com",
-    lastOrder: "2023-02-15",
-    method: "PayPal"
+    number: 2,
+    name: 'Jane Smith',
+    address: '456 Elm St',
+    projectChiefName: 'Bob Williams',
+    vatTax: '987654321',
+    email: 'jane@example.com',
+    panVatNumber: 'XYZ456ABC',
+  },
+  // Add more entries here
+  {
+    number: 3,
+    name: 'Michael Johnson',
+    address: '789 Oak St',
+    projectChiefName: 'Emma Davis',
+    vatTax: '456123789',
+    email: 'michael@example.com',
+    panVatNumber: 'DEF789GHI',
   },
   {
-    name: "Bob Johnson",
-    email: "bob@example.com",
-    lastOrder: "2023-03-20",
-    method: "Stripe"
+    number: 4,
+    name: 'Sarah Brown',
+    address: '101 Pine St',
+    projectChiefName: 'David Wilson',
+    vatTax: '987654321',
+    email: 'sarah@example.com',
+    panVatNumber: 'GHI789JKL',
+  },
+  // Add more entries here
+  {
+    number: 5,
+    name: 'Chris Lee',
+    address: '202 Maple St',
+    projectChiefName: 'Sophia Taylor',
+    vatTax: '456123789',
+    email: 'chris@example.com',
+    panVatNumber: 'MNO123PQR',
   },
   {
-    name: "Emma Brown",
-    email: "emma@example.com",
-    lastOrder: "2023-04-10",
-    method: "Venmo"
+    number: 1,
+    name: 'John Doe',
+    address: '123 Main St',
+    projectChiefName: 'Alice Johnson',
+    vatTax: '123456789',
+    email: 'john@example.com',
+    panVatNumber: 'ABC123XYZ',
   },
   {
-    name: "Michael Davis",
-    email: "michael@example.com",
-    lastOrder: "2023-05-05",
-    method: "Cash"
+    number: 2,
+    name: 'Jane Smith',
+    address: '456 Elm St',
+    projectChiefName: 'Bob Williams',
+    vatTax: '987654321',
+    email: 'jane@example.com',
+    panVatNumber: 'XYZ456ABC',
+  },
+  // Add more entries here
+  {
+    number: 3,
+    name: 'Michael Johnson',
+    address: '789 Oak St',
+    projectChiefName: 'Emma Davis',
+    vatTax: '456123789',
+    email: 'michael@example.com',
+    panVatNumber: 'DEF789GHI',
   },
   {
-    name: "Sophia Wilson",
-    email: "sophia@example.com",
-    lastOrder: "2023-06-18",
-    method: "Bank Transfer"
+    number: 4,
+    name: 'Sarah Brown',
+    address: '101 Pine St',
+    projectChiefName: 'David Wilson',
+    vatTax: '987654321',
+    email: 'sarah@example.com',
+    panVatNumber: 'GHI789JKL',
+  },
+  // Add more entries here
+  {
+    number: 5,
+    name: 'Chris Lee',
+    address: '202 Maple St',
+    projectChiefName: 'Sophia Taylor',
+    vatTax: '456123789',
+    email: 'chris@example.com',
+    panVatNumber: 'MNO123PQR',
   },
   {
-    name: "Liam Garcia",
-    email: "liam@example.com",
-    lastOrder: "2023-07-22",
-    method: "Payoneer"
+    number: 6,
+    name: 'Emily Brown',
+    address: '303 Cedar St',
+    projectChiefName: 'James Anderson',
+    vatTax: '987654321',
+    email: 'emily@example.com',
+    panVatNumber: 'PQR789STU',
+  },
+  // Add more entries here
+  {
+    number: 7,
+    name: 'Daniel Garcia',
+    address: '404 Walnut St',
+    projectChiefName: 'Olivia Martinez',
+    vatTax: '456123789',
+    email: 'daniel@example.com',
+    panVatNumber: 'STU123VWX',
   },
   {
-    name: "Olivia Martinez",
-    email: "olivia@example.com",
-    lastOrder: "2023-08-30",
-    method: "Apple Pay"
+    number: 8,
+    name: 'Sophia Wilson',
+    address: '505 Oak St',
+    projectChiefName: 'Michael Johnson',
+    vatTax: '987654321',
+    email: 'sophia@example.com',
+    panVatNumber: 'VWX789YZA',
   },
-  {
-    name: "Noah Rodriguez",
-    email: "noah@example.com",
-    lastOrder: "2023-09-12",
-    method: "Google Pay"
-  },
-  {
-    name: "Ava Lopez",
-    email: "ava@example.com",
-    lastOrder: "2023-10-25",
-    method: "Cryptocurrency"
-  },
-  {
-    name: "Elijah Hernandez",
-    email: "elijah@example.com",
-    lastOrder: "2023-11-05",
-    method: "Alipay"
-  },
-  {
-    name: "Mia Gonzalez",
-    email: "mia@example.com",
-    lastOrder: "2023-12-08",
-    method: "WeChat Pay"
-  },
-  {
-    name: "James Perez",
-    email: "james@example.com",
-    lastOrder: "2024-01-18",
-    method: "Square Cash"
-  },
-  {
-    name: "Charlotte Carter",
-    email: "charlotte@example.com",
-    lastOrder: "2024-02-22",
-    method: "Zelle"
-  },
-  {
-    name: "Benjamin Taylor",
-    email: "benjamin@example.com",
-    lastOrder: "2024-03-30",
-    method: "Stripe"
-  }
+  // Add more merchant data objects as needed
 ];
 
-export default function UsersPage({}: Props) {
+const UsersPage: React.FC<Props> = () => {
   return (
-    <div className="flex flex-col gap-5  w-full">
-    <div>
-      <PageTitle title="Merchant" />
-      
-    </div>
-    <div className="flex flex-col gap-5  w-full">
-    <DataTable columns={columns} data={data} />
-    </div>
+    <div className="flex flex-col gap-5 w-full">
+      <div className="flex items-center justify-between">
+        <PageTitle title="Merchant" />
+        <AddMerchantButton />
+      </div>
+      <div className="flex flex-col gap-5 w-full">
+        <DataTable columns={columns} data={data} />
+      </div>
     </div>
   );
-}
+};
+
+export default UsersPage;

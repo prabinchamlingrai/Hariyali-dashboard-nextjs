@@ -5,8 +5,7 @@ import "./globals.css";
 import SideBar from "./components/sidebar"
 import Header from "./components/header";
 import PageWrapper from "./components/pagewrapper";
-import { useState } from "react";
-import SearchInput from "./components/SearchInput";
+// import SearchInput from "./components/SearchInput";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -21,7 +20,7 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const [toggleCollapse, setToggleCollapse] = useState(false);
+ 
   return (
     <html lang="en">
       <body className={inter.className}>
@@ -33,10 +32,10 @@ export default function RootLayout({
 
 
         <div className="flex min-h-screen">
-          <SideBar toggleCollapse={toggleCollapse} />
-          <Header toggleCollapse={toggleCollapse} setToggleCollapse={setToggleCollapse}/>
-          <PageWrapper toggleCollapse={toggleCollapse}>
-            {children}
+          <SideBar />
+          <Header />
+          <PageWrapper children= {children}>
+           
           </PageWrapper>
         </div>
         </div>
