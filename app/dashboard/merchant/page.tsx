@@ -160,6 +160,8 @@ const data: Merchant[] = [
     vatTax: '456123789',
     email: 'daniel@example.com',
     panVatNumber: 'STU123VWX',
+
+    
   },
   {
     number: 8,
