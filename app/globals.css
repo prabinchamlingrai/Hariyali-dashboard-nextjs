@@ -73,4 +73,22 @@
     body {
       @apply bg-background text-foreground;
     }
+    
+.sidebar {
+  /* Styles for the element with class .sidebar */
+  scrollbar-width: thin; /* Specifies the width of the scrollbar */
+  scrollbar-color: #999999 transparent; /* Specifies the color of the scrollbar track and thumb */
+}
+
+.sidebar::-webkit-scrollbar {
+  /* Styles for the scrollbar in WebKit browsers (like Chrome and Safari) */
+  background: #999999; /* Specifies the background color of the scrollbar */
+  width: 3px; /* Specifies the width of the scrollbar */
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+  /* Styles for the thumb of the scrollbar in WebKit browsers */
+  scrollbar-color: #999999; /* Specifies the color of the scrollbar thumb */
+  border-radius: 10px; /* Specifies the border radius of the scrollbar thumb */
+}
   }

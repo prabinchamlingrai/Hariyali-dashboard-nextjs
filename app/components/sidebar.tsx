@@ -3,13 +3,16 @@ import { SIDENAV_ITEMS } from "@/SIDEBAR_CONSTANTS";
 import { SideBarMenuItem } from "./sidebar-menu-item";
 import classNames from "classnames";
 import MyImageComponent from './image';
+import { useSideBarToggle } from '@/hooks/use-sidebar-toggle';
+import SideBarMenuGroup from './sidebar-menu-group';
 
-export default function SideBar({ toggleCollapse }: { toggleCollapse: boolean }) {
-    const asideStyle = classNames("fixed bg-[#fcfdff] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-3000 ease-in-out", 
+export default function SideBar() {
+    const {toggleCollapse} = useSideBarToggle();
+    const asideStyle = classNames("sidebar  overflow-y-auto fixed bg-[#fcfdff] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-3000 ease-in-out", 
     {
-       ["w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse,
-    //   ["w-[20rem]"]: !toggleCollapse  
-      ["w-[20rem]"]: !toggleCollapse     
+        ["w-[20rem]"]: !toggleCollapse , 
+        ["w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse
+   
 
     });
 
@@ -20,10 +23,10 @@ export default function SideBar({ toggleCollapse }: { toggleCollapse: boolean })
 
                 <MyImageComponent/>
             </div>
-            <nav className="flex flex-col gap-2 transition duration-300 ease-in-out">
+            <nav className="flex flex-col gap-2 transition duration-300 ease-in-out ">
                 <div className="flex flex-col gap-2 px-4">
                     {SIDENAV_ITEMS.map((item, index) => (
-                        <SideBarMenuItem key={index} toggleCollapse={toggleCollapse}item={item} />
+                        <SideBarMenuGroup key={index} menuGroup={item} />
                     ))}
                 </div>
             </nav>
