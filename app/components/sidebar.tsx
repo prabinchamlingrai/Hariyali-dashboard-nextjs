@@ -8,7 +8,7 @@ import SideBarMenuGroup from './sidebar-menu-group';
 
 export default function SideBar() {
     const {toggleCollapse} = useSideBarToggle();
-    const asideStyle = classNames("sidebar overflow-y-auto fixed bg-[#fcfdff] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-3000 ease-in-out", 
+    const asideStyle = classNames("sidebar  overflow-y-auto fixed bg-[#fcfdff] text-gray-500 z-50 h-full shadow-gray-900/20 transition duration-3000 ease-in-out", 
     {
         ["w-[20rem]"]: !toggleCollapse , 
         ["w-[5.4rem] sm:left-0 left-[-100%]"]: toggleCollapse
@@ -23,7 +23,7 @@ export default function SideBar() {
 
                 <MyImageComponent/>
             </div>
-            <nav className="flex flex-col gap-2 transition duration-300 ease-in-out">
+            <nav className="flex flex-col gap-2 transition duration-300 ease-in-out ">
                 <div className="flex flex-col gap-2 px-4">
                     {SIDENAV_ITEMS.map((item, index) => (
                         <SideBarMenuGroup key={index} menuGroup={item} />
