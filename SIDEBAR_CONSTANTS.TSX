@@ -102,11 +102,11 @@ import { SideNavItemGroup } from "./types/types";
 
 export const SIDENAV_ITEMS: SideNavItemGroup[] = [
   {
-    title: "Dashboard first",
+    title: "Main Menu",
     menuList: [
       {
         title: "Dashboard",
-        path: "",
+        path: "/",
         icon: <BsHouseDoor size={20} />,
         submenu: true,
         subMenuItems: [
@@ -178,5 +178,22 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         ]
       }
     ]
-  }
+  },
+  {
+    title: "Authentication",
+    menuList: [
+      {
+        title: "Authentication",
+        path: "/authentication",
+        icon: <BsPerson size={20} />,
+        submenu: true,
+        // subMenuItems: [
+        //   { title: "Login", path: "/authentication/login" },
+        //   { title: "Register", path: "/authentication/register" },
+        //   { title: "Forgot Password", path: "/authentication/forgot-password" }
+        // ]
+      }
+    ]
+  },
+ 
 ];

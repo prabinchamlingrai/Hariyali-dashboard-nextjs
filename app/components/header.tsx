@@ -120,7 +120,7 @@ export default function Header() {
         <header className={headerStyle}>
             <div className="flex items-center justify-between h-16">
             <button onClick={SideBarToggle} className="order-2 sm:order-1 bg-[#366f36] text-[#fafafa] hover:bg-[#71da71] ml-3 rounded-md w-[30px] shadow-md shadow-black/10 transition duration-300 ease-in-out flex items-center justify-center">
-                <BsList></BsList>
+                <BsList size={30}></BsList>
             </button>
             <div className=" order-1 sm:order-2 h-10 w-10 rounded-full bg-[#3a3f48] flex items-center justify-center ">
                 <span className="font-semibold text-sm">SR</span>
