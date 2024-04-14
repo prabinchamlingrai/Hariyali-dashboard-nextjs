@@ -6,7 +6,7 @@ const MyImageComponent: React.FC = () => {
       <Image
         src="/hariyali-abhiyan-logo-3.png"
         alt=""
-        width={150}
+        width={100}
         height={35}
         objectFit="cover"
       />
