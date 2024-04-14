@@ -18,7 +18,7 @@ export default function SideBar() {
 
     return (
         <aside className={asideStyle}>
-            <div className="flex relative items-center p-5 px-3.5">
+            <div className="flex relative items-center p-0.5 px-3.5">
                 {/* <Image alt="" src='/hariyali-abhiyan-logo-3.png' className="w-40 mx-3.5 min-h-fit" width={35} height={35} /> */}
 
                 <MyImageComponent/>
