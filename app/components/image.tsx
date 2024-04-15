@@ -5,7 +5,7 @@ const MyImageComponent: React.FC = () => {
     <div className="w-30 mx-3.5 min-h-fit">
       <Image
         src="/hariyali-abhiyan-logo-3.png"
-        alt=""
+        alt="logo"
         width={100}
         height={35}
         objectFit="cover"
