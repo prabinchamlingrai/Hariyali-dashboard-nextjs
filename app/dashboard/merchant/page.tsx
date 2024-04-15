@@ -50,7 +50,7 @@ const columns: ColumnDef<Merchant>[] = [
 const data: Merchant[] = [
   {
     number: 1,
-    name: 'John Doe',
+    name: 'Prabin Dai',
     address: '123 Main St',
     projectChiefName: 'Alice Johnson',
     vatTax: '123456789',

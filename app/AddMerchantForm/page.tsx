@@ -3,10 +3,6 @@ import React, { useState } from "react";
 import {  ZodError } from "zod";
 import merchantSchema from "../merchantSchema";
 
-
-// Define Zod schema for form validation
-
-
 const AddMerchantForm: React.FC = () => {
   const [formData, setFormData] = useState({
     number: "",
