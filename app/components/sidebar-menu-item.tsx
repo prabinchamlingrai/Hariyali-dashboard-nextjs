@@ -32,7 +32,7 @@ export const SideBarMenuItem = ({ item }: { item: SideNavItem }) => {
                         <div className="bg-[#f7f8f9] border-1-4">
                             <div className="grid gap-y-2 px-10 py-3 leading-5">
                                 {item.subMenuItems!.map((subItem) => (
-                                    <Link key={subItem.path} href={subItem.path} className={`text-[#6e768e] py-2 px-4 hover:bg-green-600  rounded-md transition duration-200 ${subItem.path === pathName ? "" : ""}`}>
+                                    <Link key={subItem.path} href={subItem.path} className={`text-[#6e768e] py-2 px-4 hover:bg-green-600 hover:text-white rounded-md transition duration-200 ${subItem.path === pathName ? "" : ""}`}>
                                         <span>{subItem.title}</span>
                                     </Link>
                                 ))}
