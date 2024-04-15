@@ -209,7 +209,7 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
     menuList: [
       {
         title: "Dashboard",
-        path: "/dashboard",
+        path: "/AdminDashboard",
         icon: <BsHouseDoor size={20} />,
         submenu: true,
         subMenuItems: [
