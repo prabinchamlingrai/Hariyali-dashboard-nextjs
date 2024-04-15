@@ -95,9 +95,112 @@
 
 
 
-import React from "react";
+// import React from "react";
 
-import { BsGear, BsHouseDoor, BsListUl, BsPerson } from "react-icons/bs";
+// import { BsGear, BsHouseDoor, BsListUl, BsPerson } from "react-icons/bs";
+// import { SideNavItemGroup } from "./types/types";
+
+// export const SIDENAV_ITEMS: SideNavItemGroup[] = [
+//   {
+//     title: "Main Menu",
+//     menuList: [
+//       {
+//         title: "Dashboard",
+//         path: "/",
+//         icon: <BsHouseDoor size={20} />,
+//         submenu: true,
+//         subMenuItems: [
+//           { title: "Admin Dashboard", path: "/AdminDashboard" },
+//           { title: "User Dashboard", path: "/userDashboard" }
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     title: "Dashboard",
+//     menuList: [
+//       {
+//         title: "Dashboard",
+//         path: "/dashboard",
+//         icon: <BsHouseDoor size={20} />,
+//         submenu: true,
+//         subMenuItems: [
+//           { title: "Merchant", path: "/dashboard/merchant" },
+//           { title: "Entrepreneur", path: "/dashboard/entrepreneur" },
+//           { title: "Farmer Group", path: "/dashboard/farmer-group" },
+//           { title: "Farmers", path: "/dashboard/farmers" }
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     title: "Invoice",
+//     menuList: [
+//       {
+//         title: "Invoice",
+//         path: "/invoices",
+//         icon: <BsListUl size={20} />,
+//         submenu: true,
+//         subMenuItems: [
+//           { title: "Create Invoice", path: "/invoices/create" },
+//           { title: "View Invoices", path: "/invoices/view" }
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     title: "Account",
+//     menuList: [
+//       {
+//         title: "Account",
+//         path: "/account",
+//         icon: <BsGear size={20} />,
+//         submenu: true,
+//         subMenuItems: [
+//           { title: "Profile", path: "/account/profile" },
+//           { title: "Settings", path: "/account/settings" }
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     title: "Authentication",
+//     menuList: [
+//       {
+//         title: "Authentication",
+//         path: "/authentication",
+//         icon: <BsPerson size={20} />,
+//         submenu: true,
+//         subMenuItems: [
+//           { title: "Login", path: "/authentication/login" },
+//           { title: "Register", path: "/authentication/register" },
+//           { title: "Forgot Password", path: "/authentication/forgot-password" }
+//         ]
+//       }
+//     ]
+//   },
+//   {
+//     title: "Authentication",
+//     menuList: [
+//       {
+//         title: "Authentication",
+//         path: "/authentication",
+//         icon: <BsPerson size={20} />,
+//         submenu: true,
+//         // subMenuItems: [
+//         //   { title: "Login", path: "/authentication/login" },
+//         //   { title: "Register", path: "/authentication/register" },
+//         //   { title: "Forgot Password", path: "/authentication/forgot-password" }
+//         // ]
+//       }
+//     ]
+//   },
+
+// ];
+
+
+import React from "react";
+import { BsGear, BsHouseDoor, BsListUl, BsPerson, BsTruck } from "react-icons/bs";
 import { SideNavItemGroup } from "./types/types";
 
 export const SIDENAV_ITEMS: SideNavItemGroup[] = [
@@ -106,19 +209,14 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
     menuList: [
       {
         title: "Dashboard",
-        path: "/",
+        path: "/dashboard",
         icon: <BsHouseDoor size={20} />,
         submenu: true,
         subMenuItems: [
           { title: "Admin Dashboard", path: "/AdminDashboard" },
           { title: "User Dashboard", path: "/userDashboard" }
         ]
-      }
-    ]
-  },
-  {
-    title: "Dashboard",
-    menuList: [
+      },
       {
         title: "Dashboard",
         path: "/dashboard",
@@ -130,14 +228,11 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
           { title: "Farmer Group", path: "/dashboard/farmer-group" },
           { title: "Farmers", path: "/dashboard/farmers" }
         ]
-      }
-    ]
-  },
-  {
-    title: "Invoice",
-    menuList: [
+        
+      },
+
       {
-        title: "Invoice",
+        title: "Invoices",
         path: "/invoices",
         icon: <BsListUl size={20} />,
         submenu: true,
@@ -146,14 +241,15 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
           { title: "View Invoices", path: "/invoices/view" }
         ]
       }
+      
     ]
   },
   {
-    title: "Account",
+    title: "Management",
     menuList: [
       {
-        title: "Account",
-        path: "/account",
+        title: "Accounts",
+        path: "/accounts",
         icon: <BsGear size={20} />,
         submenu: true,
         subMenuItems: [
@@ -164,7 +260,7 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
     ]
   },
   {
-    title: "Authentication",
+    title: "Pages",
     menuList: [
       {
         title: "Authentication",
@@ -176,24 +272,22 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
           { title: "Register", path: "/authentication/register" },
           { title: "Forgot Password", path: "/authentication/forgot-password" }
         ]
+      },
+      {
+        title: "Blank Page",
+        path: "/blank",
+        icon: <BsPerson size={20} />
       }
     ]
   },
   {
-    title: "Authentication",
+    title: "Others",
     menuList: [
       {
-        title: "Authentication",
-        path: "/authentication",
-        icon: <BsPerson size={20} />,
-        submenu: true,
-        // subMenuItems: [
-        //   { title: "Login", path: "/authentication/login" },
-        //   { title: "Register", path: "/authentication/register" },
-        //   { title: "Forgot Password", path: "/authentication/forgot-password" }
-        // ]
+        title: "Transport",
+        path: "/transport",
+        icon: <BsTruck size={20} />
       }
     ]
-  },
- 
+  }
 ];

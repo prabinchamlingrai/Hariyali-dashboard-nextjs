@@ -178,14 +178,15 @@ const data: Merchant[] = [
 const UsersPage: React.FC<Props> = () => {
   return (
     <div className="flex flex-col gap-5 w-full">
-      <div className="flex items-center justify-between">
-        <PageTitle title="Merchant" />
-        <AddMerchantButton />
-      </div>
-      <div className="flex flex-col gap-5 w-full">
-        <DataTable columns={columns} data={data} />
-      </div>
+    <div className="flex items-center justify-between">
+      <PageTitle title="Merchant" />
+      <AddMerchantButton />
     </div>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 gap-5 w-full">
+      <DataTable columns={columns} data={data} />
+    </div>
+  </div>
+  
   );
 };
 
