@@ -237,6 +237,7 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         icon: <BsListUl size={20} />,
         submenu: true,
         subMenuItems: [
+          { title: "Invoice", path: "/invoices/invoicestable" },
           { title: "Create Invoice", path: "/invoices/create" },
           { title: "View Invoices", path: "/invoices/view" }
         ]
