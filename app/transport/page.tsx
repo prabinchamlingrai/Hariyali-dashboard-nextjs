@@ -1,12 +1,12 @@
 import React from 'react';
 import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from '@/app/components/DataTable';
-import PageTitle from '@/app/components/ui/PageTitle';
-import AddMerchantButton from '@/app/components/buttons/AddMerchantButton';
+import PageTitle from '@/components/ui/PageTitle';
+import AddTransportButton from '@/app/components/AddTransportButton';
 
 type Props = {};
 
-type Merchant = {
+type Transport = {
   number: number;
   name: string;
   address: string;
@@ -16,14 +16,14 @@ type Merchant = {
   panVatNumber: string;
 };
 
-const columns: ColumnDef<Merchant>[] = [
+const columns: ColumnDef<Transport>[] = [
   {
     accessorKey: 'number',
     header: 'Number',
   },
   {
     accessorKey: 'name',
-    header: 'Merchant Name',
+    header: 'Transport Name',
   },
   {
     accessorKey: 'address',
@@ -47,7 +47,7 @@ const columns: ColumnDef<Merchant>[] = [
   },
 ];
 
-const data: Merchant[] = [
+const data: Transport[] = [
   {
     number: 1,
     name: 'Prabin Dai',
@@ -172,15 +172,15 @@ const data: Merchant[] = [
     email: 'sophia@example.com',
     panVatNumber: 'VWX789YZA',
   },
-  // Add more merchant data objects as needed
+  // Add more Transport data objects as needed
 ];
 
 const UsersPage: React.FC<Props> = () => {
   return (
     <div className="flex flex-col gap-5 w-full">
     <div className="flex items-center justify-between">
-      <PageTitle title="Merchant" />
-      <AddMerchantButton />
+      <PageTitle title="Transport" />
+      <AddTransportButton />
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 gap-5 w-full">
       <DataTable columns={columns} data={data} />
