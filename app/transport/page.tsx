@@ -1,7 +1,8 @@
 import React from 'react';
 import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from '@/app/components/DataTable';
-import PageTitle from '@/components/ui/PageTitle';
+
+import PageTitle from '../components/ui/PageTitle';
 import AddTransportButton from '@/app/components/AddTransportButton';
 
 type Props = {};
