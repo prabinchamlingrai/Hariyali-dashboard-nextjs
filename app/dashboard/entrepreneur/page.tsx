@@ -1,8 +1,9 @@
 import React from 'react';
 import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from '@/app/components/DataTable';
-import PageTitle from '@/components/ui/PageTitle';
-import AddEnterpreneurButton from '@/app/components/AddEnterpreneurButton';
+import PageTitle from '@/app/components/ui/PageTitle';
+import AddEntrepreneurButton from '@/app/components/buttons/AddEntrepreneurButton';
+
 
 type Props = {};
 
@@ -180,7 +181,7 @@ const UsersPage: React.FC<Props> = () => {
     <div className="flex flex-col gap-5 w-full">
     <div className="flex items-center justify-between">
       <PageTitle title="Entrepreneur" />
-      <AddEnterpreneurButton/>
+      <AddEntrepreneurButton/>
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 gap-5 w-full">
       <DataTable columns={columns} data={data} />
