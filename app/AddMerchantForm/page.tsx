@@ -1,7 +1,7 @@
 'use client'
 import React, { useState } from "react";
 import {  ZodError } from "zod";
-import merchantSchema from "../merchantSchema";
+import merchantSchema from "../schemas/merchantSchema";
 
 const AddMerchantForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -110,7 +110,7 @@ const AddMerchantForm: React.FC = () => {
                 name="number"
                 value={formData.number}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.number ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.number ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.number && (
@@ -131,7 +131,7 @@ const AddMerchantForm: React.FC = () => {
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.name ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.name ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.name && (
@@ -152,7 +152,7 @@ const AddMerchantForm: React.FC = () => {
                 name="address"
                 value={formData.address}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.address ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.address ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.address && (
@@ -173,7 +173,7 @@ const AddMerchantForm: React.FC = () => {
                 name="projectChiefName"
                 value={formData.projectChiefName}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.projectChiefName ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.projectChiefName ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.projectChiefName && (
@@ -194,7 +194,7 @@ const AddMerchantForm: React.FC = () => {
                 name="vatTax"
                 value={formData.vatTax}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.vatTax ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.vatTax ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.vatTax && (
@@ -215,7 +215,7 @@ const AddMerchantForm: React.FC = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.email ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.email ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.email && (
@@ -236,7 +236,7 @@ const AddMerchantForm: React.FC = () => {
                 name="panVatNumber"
                 value={formData.panVatNumber}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.panVatNumber ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.panVatNumber ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.panVatNumber && (
@@ -257,7 +257,7 @@ const AddMerchantForm: React.FC = () => {
                 name="wardNumber"
                 value={formData.wardNumber}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.wardNumber ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.wardNumber ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.wardNumber && (
@@ -278,7 +278,7 @@ const AddMerchantForm: React.FC = () => {
                 name="toleNumber"
                 value={formData.toleNumber}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.toleNumber ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.toleNumber ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.toleNumber && (
@@ -299,7 +299,7 @@ const AddMerchantForm: React.FC = () => {
                 name="houseNumber"
                 value={formData.houseNumber}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.houseNumber ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.houseNumber ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               />
               {formErrors.houseNumber && (
@@ -319,7 +319,7 @@ const AddMerchantForm: React.FC = () => {
                 name="pradesh"
                 value={formData.pradesh}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border  ${formErrors.pradesh ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border  ${formErrors.pradesh ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               >
                 <option value="">Select Pradesh</option>
@@ -346,7 +346,7 @@ const AddMerchantForm: React.FC = () => {
                 name="district"
                 value={formData.district}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.district ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.district ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               >
                 <option value="">Select District</option>
@@ -373,7 +373,7 @@ const AddMerchantForm: React.FC = () => {
                 name="nagarPalika"
                 value={formData.nagarPalika}
                 onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.nagarPalika ? "border-red-500" : "border-gray-300"
+                className={`w-full sm:w-auto px-0 py-1 rounded-md border ${formErrors.nagarPalika ? "border-red-500" : "border-gray-300"
                   } focus:outline-none focus:border-blue-500`}
               >
                 <option value="">Select Nagar Palika</option>
