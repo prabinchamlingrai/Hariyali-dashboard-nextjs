@@ -1,7 +1,5 @@
-/** @format */
-
-"use client";
-
+'use client'
+import React from "react";
 import {
   ColumnDef,
   flexRender,
@@ -19,8 +17,7 @@ import {
   TableRow
 } from "@/app/components/ui/table";
 import { Button } from "@/app/components/ui/button";
-
-// import { Button } from "./ui/button";
+import { FaEdit, FaTrash } from 'react-icons/fa';
 
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[];
@@ -39,8 +36,8 @@ export function DataTable<TData, TValue>({
   });
 
   return (
-    <div>
-      <div className="rounded-md border ">
+    <div className="overflow-x-auto">
+      <div className="rounded-md border">
         <Table>
           <TableHeader>
             {table.getHeaderGroups().map((headerGroup) => (
@@ -57,6 +54,7 @@ export function DataTable<TData, TValue>({
                     </TableHead>
                   );
                 })}
+                <TableHead>Actions</TableHead>
               </TableRow>
             ))}
           </TableHeader>
@@ -65,6 +63,7 @@ export function DataTable<TData, TValue>({
               table.getRowModel().rows.map((row) => (
                 <TableRow
                   key={row.id}
+                  className="transition-all hover:bg-gray-100"
                   data-state={row.getIsSelected() && "selected"}
                 >
                   {row.getVisibleCells().map((cell) => (
@@ -75,12 +74,30 @@ export function DataTable<TData, TValue>({
                       )}
                     </TableCell>
                   ))}
+                  <TableCell>
+                    <div className="flex items-center justify-center space-x-2">
+                      <Button
+                        style={{ backgroundColor: '#1e85e7', color: 'white' }}
+                        size="sm"
+                        onClick={() => handleEdit(row)}
+                      >
+                        <FaEdit />
+                      </Button>
+                      <Button
+                        style={{ backgroundColor: 'red', color: 'white' }}
+                        size="sm"
+                        onClick={() => handleDelete(row)}
+                      >
+                        <FaTrash />
+                      </Button>
+                    </div>
+                  </TableCell>
                 </TableRow>
               ))
             ) : (
               <TableRow>
                 <TableCell
-                  colSpan={columns.length}
+                  colSpan={columns.length + 1}
                   className="h-24 text-center"
                 >
                   No results.
@@ -110,4 +127,13 @@ export function DataTable<TData, TValue>({
       </div>
     </div>
   );
+}
+
+// Example handlers for edit and delete actions
+function handleEdit(row: any) {
+  console.log("Edit action for row:", row);
+}
+
+function handleDelete(row: any) {
+  console.log("Delete action for row:", row);
 }

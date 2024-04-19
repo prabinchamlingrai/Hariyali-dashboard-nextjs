@@ -2,7 +2,7 @@ import React from 'react';
 import { ColumnDef } from '@tanstack/react-table';
 import { DataTable } from '@/app/components/DataTable';
 import PageTitle from '@/app/components/ui/PageTitle';
-import AddTransportButton from '@/app/components/AddTransportButton';
+import AddTransportButton from '@/app/components/buttons/AddTransportButton';
 
 type Props = {};
 
