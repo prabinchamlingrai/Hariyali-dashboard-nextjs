@@ -2,12 +2,11 @@
 // import { BsGear, BsHouseDoor, BsKanban, BsListUl, BsQuestionCircle, BsEnvelope } from "react-icons/bs";
 // import { SideNavItem } from "./types/types";
 
-
 // export const SIDENAV_ITEMS: SideNavItem[] = [
-//     { 
-//         title: "Dashboard", 
-//         path: "/", 
-//         icon: <BsHouseDoor size={20} /> 
+//     {
+//         title: "Dashboard",
+//         path: "/",
+//         icon: <BsHouseDoor size={20} />
 //     },
 
 //         {
@@ -92,8 +91,6 @@
 //     ]
 //   }
 // ];
-
-
 
 // import React from "react";
 
@@ -198,9 +195,14 @@
 
 // ];
 
-
 import React from "react";
-import { BsGear, BsHouseDoor, BsListUl, BsPerson, BsTruck } from "react-icons/bs";
+import {
+  BsGear,
+  BsHouseDoor,
+  BsListUl,
+  BsPerson,
+  BsTruck,
+} from "react-icons/bs";
 import { SideNavItemGroup } from "./types/types";
 
 export const SIDENAV_ITEMS: SideNavItemGroup[] = [
@@ -213,12 +215,12 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         icon: <BsHouseDoor size={20} />,
         submenu: true,
         subMenuItems: [
-          { title: "Admin Dashboard", path: "/AdminDashboard" },
-          { title: "User Dashboard", path: "/userDashboard" }
-        ]
+          { title: "Admin Dashboard", path: "/" },
+          { title: "User Dashboard", path: "/userDashboard" },
+        ],
       },
       {
-        title: "Dashboard",
+        title: "Section",
         path: "/dashboard",
         icon: <BsHouseDoor size={20} />,
         submenu: true,
@@ -226,39 +228,66 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
           { title: "Merchant", path: "/dashboard/merchant" },
           { title: "Entrepreneur", path: "/dashboard/entrepreneur" },
           { title: "Farmer Group", path: "/dashboard/farmer-group" },
-          { title: "Farmers", path: "/dashboard/farmers" }
-        ]
-        
+          { title: "Farmers", path: "/dashboard/farmers" },
+        ],
       },
 
       {
-        title: "Invoices",
-        path: "/invoices",
+        title: "Commodity",
+        path: "/commodity",
         icon: <BsListUl size={20} />,
         submenu: true,
         subMenuItems: [
-          { title: "Invoice", path: "/invoices/invoicestable" },
-          { title: "Create Invoice", path: "/invoices/create" },
-          { title: "View Invoices", path: "/invoices/view" }
-        ]
-      }
-      
-    ]
+          { title: " Admin Commodity", path: "/commodity/commodity" },
+          {
+            title: "Create Admin Commodity",
+            path: "/commodity/commodity/createCommodity",
+          },
+          { title: " Farmer Commodity", path: "/commodity/farmerCommodity" },
+          {
+            title: "Create Farmer Commodity",
+            path: "/commodity/farmerCommodity/createFarmerCommodity",
+          },
+        ],
+      },
+    ],
   },
   {
-    title: "Management",
+    title: "Inventory",
     menuList: [
       {
-        title: "Accounts",
-        path: "/accounts",
+        title: "Given to Farmer",
+        path: "/givenFarmer",
         icon: <BsGear size={20} />,
         submenu: true,
         subMenuItems: [
-          { title: "Profile", path: "/account/profile" },
-          { title: "Settings", path: "/account/settings" }
-        ]
-      }
-    ]
+          {
+            title: "View Inventory",
+            path: "/inventory/givenFarmer",
+          },
+          {
+            title: "Create Inventory",
+            path: "/inventory/givenFarmer/create",
+          },
+        ],
+      },
+      {
+        title: "Taken From Farmer",
+        path: "/takenFarmer",
+        icon: <BsGear size={20} />,
+        submenu: true,
+        subMenuItems: [
+          {
+            title: "View Inventory",
+            path: "/inventory/takenFarmer",
+          },
+          {
+            title: "Create Inventory",
+            path: "/inventory/takenFarmer/create",
+          },
+        ],
+      },
+    ],
   },
   {
     title: "Pages",
@@ -271,15 +300,15 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         subMenuItems: [
           { title: "Login", path: "/authentication/login" },
           { title: "Register", path: "/authentication/register" },
-          { title: "Forgot Password", path: "/authentication/forgot-password" }
-        ]
+          { title: "Forgot Password", path: "/authentication/forgot-password" },
+        ],
       },
       {
         title: "Blank Page",
         path: "/blank",
-        icon: <BsPerson size={20} />
-      }
-    ]
+        icon: <BsPerson size={20} />,
+      },
+    ],
   },
   {
     title: "Others",
@@ -287,8 +316,8 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
       {
         title: "Transport",
         path: "/transport",
-        icon: <BsTruck size={20} />
-      }
-    ]
-  }
+        icon: <BsTruck size={20} />,
+      },
+    ],
+  },
 ];
