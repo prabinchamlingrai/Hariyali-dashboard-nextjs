@@ -1,0 +1,104 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+  }
+} */
+
+@layer base {
+  /* * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  } */
+  .labelStyle {
+    @apply block  text-sm font-medium leading-6 text-gray-900;
+  }
+  .inputStyle {
+    @apply w-full px-0 py-1 rounded-md border 
+    border-gray-300 text-sm focus:outline-none focus:border-[#366f36];
+  }
+  .selectStyle {
+    @apply w-full px-0 py-1 text-sm rounded-md border border-gray-300 focus:outline-none focus:border-[#366f36];
+  }
+
+  .sidebar {
+    /* Styles for the element with class .sidebar */
+    scrollbar-width: thin; /* Specifies the width of the scrollbar */
+    scrollbar-color: #999999 transparent; /* Specifies the color of the scrollbar track and thumb */
+  }
+
+  .sidebar::-webkit-scrollbar {
+    /* Styles for the scrollbar in WebKit browsers (like Chrome and Safari) */
+    background: #999999; /* Specifies the background color of the scrollbar */
+    width: 3px; /* Specifies the width of the scrollbar */
+  }
+
+  .sidebar::-webkit-scrollbar-thumb {
+    /* Styles for the thumb of the scrollbar in WebKit browsers */
+    scrollbar-color: #999999; /* Specifies the color of the scrollbar thumb */
+    border-radius: 10px; /* Specifies the border radius of the scrollbar thumb */
+  }
+}
