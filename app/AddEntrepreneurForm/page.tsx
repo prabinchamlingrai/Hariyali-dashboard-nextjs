@@ -159,6 +159,7 @@ const AddEntrepreneurForm: React.FC = () => {
               </select>
               {formErrors.district && (<p className="text-red-500">{formErrors.district}</p>)}
             </div>
+            
             {/* Nagar Palika */}
             <div className="sm:col-span-2">
               <label htmlFor="nagarPalika" className="block text-sm font-medium leading-6 text-gray-900">Nagar Palika</label>
