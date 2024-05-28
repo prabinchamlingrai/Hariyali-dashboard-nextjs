@@ -6,7 +6,7 @@ import AddFarmersButton from '@/app/components/buttons/AddFarmersButton';
 
 type Props = {};
 
-type Farmers = {
+type FarmersGroup = {
   number: number;
   name: string;
   address: string;
@@ -16,14 +16,14 @@ type Farmers = {
   panVatNumber: string;
 };
 
-const columns: ColumnDef<Farmers>[] = [
+const columns: ColumnDef<FarmersGroup>[] = [
   {
     accessorKey: 'number',
     header: 'Number',
   },
   {
     accessorKey: 'name',
-    header: 'Farmers Name',
+    header: 'FarmersGroup Name',
   },
   {
     accessorKey: 'address',
@@ -47,7 +47,7 @@ const columns: ColumnDef<Farmers>[] = [
   },
 ];
 
-const data: Farmers[] = [
+const data: FarmersGroup[] = [
   {
     number: 1,
     name: 'Prabin Dai',
@@ -172,14 +172,14 @@ const data: Farmers[] = [
     email: 'sophia@example.com',
     panVatNumber: 'VWX789YZA',
   },
-  // Add more Farmers data objects as needed
+  // Add more FarmersGroup data objects as needed
 ];
 
 const UsersPage: React.FC<Props> = () => {
   return (
     <div className="flex flex-col gap-5 w-full">
     <div className="flex items-center justify-between">
-      <PageTitle title="Farmers" />
+      <PageTitle title="FarmersGroup" />
       <AddFarmersButton />
     </div>
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-1 xl:grid-cols-1 gap-5 w-full">

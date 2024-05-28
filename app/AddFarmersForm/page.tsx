@@ -1,23 +1,23 @@
 'use client'
 import React, { useState } from "react";
-import {  ZodError } from "zod";
-import farmersSchema from "@/app/farmersSchema"
+import { ZodError } from "zod";
+import farmersSchema from "@/app/farmersSchema";
 
 const AddFarmersForm: React.FC = () => {
   const [formData, setFormData] = useState({
-    number: "",
     name: "",
     address: "",
+    number: "",
     projectChiefName: "",
     vatTax: "",
     email: "",
     panVatNumber: "",
-    wardNumber: "",
-    toleNumber: "",
-    houseNumber: "",
     pradesh: "",
     district: "",
     nagarPalika: "",
+    wardNumber: "",
+    toleNumber: "",
+    houseNumber: "",
   });
   const [formErrors, setFormErrors] = useState<Record<string, string>>({});
 
@@ -27,98 +27,72 @@ const AddFarmersForm: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    
     e.preventDefault();
     try {
-      // Validate form data against schema
       farmersSchema.parse(formData);
-      // If validation succeeds, you can handle form submission here
       console.log("Form data is valid:", formData);
-      // Reset form data after successful submission
       setFormData({
-        number: "",
         name: "",
         address: "",
+        number: "",
         projectChiefName: "",
         vatTax: "",
         email: "",
         panVatNumber: "",
-        wardNumber: "",
-        toleNumber: "",
-        houseNumber: "",
         pradesh: "",
         district: "",
         nagarPalika: "",
+        wardNumber: "",
+        toleNumber: "",
+        houseNumber: "",
       });
-      // Clear any previous errors
       setFormErrors({});
     } catch (error) {
       if (error instanceof ZodError) {
-        // If there are validation errors, set them in state
         const fieldErrors: Record<string, string> = {};
         error.errors.forEach((err) => {
           if (err.path) {
             fieldErrors[err.path[0]] = err.message;
           }
         });
+        // Remove validation errors for "Tole Number" and "House Number" fields
+        delete fieldErrors.toleNumber;
+        delete fieldErrors.houseNumber;
         setFormErrors(fieldErrors);
       }
     }
   };
+
   const handleCancel = () => {
-    // Reset the form data and clear any errors
     setFormData({
-      number: "",
       name: "",
       address: "",
+      number: "",
       projectChiefName: "",
       vatTax: "",
       email: "",
       panVatNumber: "",
-      wardNumber: "",
-      toleNumber: "",
-      houseNumber: "",
       pradesh: "",
       district: "",
       nagarPalika: "",
+      wardNumber: "",
+      toleNumber: "",
+      houseNumber: "",
     });
     setFormErrors({});
   };
 
-  
-
   return (
     <div className="flex flex-col shadow-lg mb-6 justify-center items-center">
       <main className="flex flex-1 flex-col justify-items-center gap-4 p-4 lg:gap-6 lg:p-6">
-        <h1 className="text-2xl font-bold mb-5">Add Farmers</h1>
+        <h1 className="text-2xl font-bold mb-5">Farmers</h1>
         <div className="flex items-center">
           <form
             onSubmit={handleSubmit}
             className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6"
           >
-            {/* Number */}
-            <div className="sm:col-span-2 sm:col-start-1">
-              <label
-                htmlFor="number"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Number
-              </label>
-              <input
-                type="text"
-                id="number"
-                name="number"
-                value={formData.number}
-                onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.number ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:border-blue-500`}
-              />
-              {formErrors.number && (
-                <p className="text-red-500">{formErrors.number}</p>
-              )}
-            </div>
             {/* Name */}
-            <div className="sm:col-span-2">
+            <div className="sm:col-span-2 sm:col-start-1">
               <label
                 htmlFor="name"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -159,8 +133,29 @@ const AddFarmersForm: React.FC = () => {
                 <p className="text-red-500">{formErrors.address}</p>
               )}
             </div>
+            {/* Number */}
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="number"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Number
+              </label>
+              <input
+                type="text"
+                id="number"
+                name="number"
+                value={formData.number}
+                onChange={handleChange}
+                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.number ? "border-red-500" : "border-gray-300"
+                  } focus:outline-none focus:border-blue-500`}
+              />
+              {formErrors.number && (
+                <p className="text-red-500">{formErrors.number}</p>
+              )}
+            </div>
             {/* Project Chief Name */}
-            <div className="sm:col-span-2 sm:col-start-1">
+            <div className="sm:col-span-2">
               <label
                 htmlFor="projectChiefName"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -223,7 +218,7 @@ const AddFarmersForm: React.FC = () => {
               )}
             </div>
             {/* PAN/VAT Number */}
-            <div className="sm:col-span-2 sm:col-start-1">
+            <div className="sm:col-span-2">
               <label
                 htmlFor="panVatNumber"
                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -241,69 +236,6 @@ const AddFarmersForm: React.FC = () => {
               />
               {formErrors.panVatNumber && (
                 <p className="text-red-500">{formErrors.panVatNumber}</p>
-              )}
-            </div>
-            {/* Ward Number */}
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="wardNumber"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Ward Number
-              </label>
-              <input
-                type="text"
-                id="wardNumber"
-                name="wardNumber"
-                value={formData.wardNumber}
-                onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.wardNumber ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:border-blue-500`}
-              />
-              {formErrors.wardNumber && (
-                <p className="text-red-500">{formErrors.wardNumber}</p>
-              )}
-            </div>
-            {/* Tole Number */}
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="toleNumber"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                Tole Number
-              </label>
-              <input
-                type="text"
-                id="toleNumber"
-                name="toleNumber"
-                value={formData.toleNumber}
-                onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.toleNumber ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:border-blue-500`}
-              />
-              {formErrors.toleNumber && (
-                <p className="text-red-500">{formErrors.toleNumber}</p>
-              )}
-            </div>
-            {/* House Number */}
-            <div className="sm:col-span-2">
-              <label
-                htmlFor="houseNumber"
-                className="block text-sm font-medium leading-6 text-gray-900"
-              >
-                House Number
-              </label>
-              <input
-                type="text"
-                id="houseNumber"
-                name="houseNumber"
-                value={formData.houseNumber}
-                onChange={handleChange}
-                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.houseNumber ? "border-red-500" : "border-gray-300"
-                  } focus:outline-none focus:border-blue-500`}
-              />
-              {formErrors.houseNumber && (
-                <p className="text-red-500">{formErrors.houseNumber}</p>
               )}
             </div>
             {/* Pradesh */}
@@ -387,22 +319,78 @@ const AddFarmersForm: React.FC = () => {
                 <p className="text-red-500">{formErrors.nagarPalika}</p>
               )}
             </div>
+            {/* Ward Number */}
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="wardNumber"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Ward Number
+              </label>
+              <input
+                type="text"
+                id="wardNumber"
+                name="wardNumber"
+                value={formData.wardNumber}
+                onChange={handleChange}
+                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border ${formErrors.wardNumber ? "border-red-500" : "border-gray-300"
+                  } focus:outline-none focus:border-blue-500`}
+              />
+              {formErrors.wardNumber && (
+                <p className="text-red-500">{formErrors.wardNumber}</p>
+              )}
+            </div>
+            {/* Tole Number */}
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="toleNumber"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Tole Number
+              </label>
+              <input
+                type="text"
+                id="toleNumber"
+                name="toleNumber"
+                value={formData.toleNumber}
+                onChange={handleChange}
+                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border focus:outline-none focus:border-blue-500`}
+              />
+              {/* No validation error display for "Tole Number" */}
+            </div>
+            {/* House Number */}
+            <div className="sm:col-span-2">
+              <label
+                htmlFor="houseNumber"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                House Number
+              </label>
+              <input
+                type="text"
+                id="houseNumber"
+                name="houseNumber"
+                value={formData.houseNumber}
+                onChange={handleChange}
+                className={`w-full sm:w-auto px-4 py-1.5 rounded-md border focus:outline-none focus:border-blue-500`}
+              />
+              {/* No validation error display for "House Number" */}
+            </div>
             <div className="sm:col-start-1 mt-6 flex items-end justify-start gap-x-6">
-  <button
-    type="button"
-    onClick={handleCancel}
-    className="rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-  >
-    Cancel
-  </button>
-  <button
-    type="submit"
-    className="rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
-  >
-    Save
-  </button>
-</div>
-
+              <button
+                type="button"
+                onClick={handleCancel}
+                className="rounded-md bg-red-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500"
+              >
+                Save
+              </button>
+            </div>
           </form>
         </div>
       </main>
