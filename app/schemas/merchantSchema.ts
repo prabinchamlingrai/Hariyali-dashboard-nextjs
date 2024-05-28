@@ -50,20 +50,36 @@ const merchantSchema = z.object({
       message: "Ward number cannot be zero"
     }),
 
-  toleNumber: z.string()
-    .min(1)
-    .max(10)
-    .nonempty("Enter the following input to proceed"),
+  // toleNumber: z.string()
+  //   .min(1)
+  //   .max(10)
+  //   .nonempty("Enter the following input to proceed"),
 
-  houseNumber: z.string()
-    .min(1)
-    .max(10)
-    .nonempty("Enter the following input to proceed")
-    .regex(/^[0-9A-Za-z]+$/),
+  // houseNumber: z.string()
+  //   .min(1)
+  //   .max(10)
+  //   .nonempty("Enter the following input to proceed")
+  //   .regex(/^[0-9A-Za-z]+$/),
 
   pradesh: z.string().nonempty("Enter the following input to proceed"),
   district: z.string().nonempty("Enter the following input to proceed"),
-  nagarPalika: z.string().nonempty("Enter the following input to proceed")
+  nagarPalika: z.string().nonempty("Enter the following input to proceed"),
+
+  // Bank Name
+  bankName: z.string()
+    .min(3)
+    .max(50)
+    .nonempty("Enter the following input to proceed"),
+
+  // Bank Account Number
+  bankAccountNumber: z.string()
+    .min(6)
+    .max(20)
+    .nonempty("Enter the following input to proceed")
+    .regex(/^[0-9]+$/)
+    .refine(value => parseInt(value, 10) !== 0, {
+      message: "Bank Account Number cannot be zero"
+    }),
 });
 
 export default merchantSchema;

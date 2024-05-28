@@ -218,17 +218,27 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         ]
       },
       {
-        title: "Dashboard",
-        path: "/dashboard",
+        title: "Setup",
+        path: "/setup",
         icon: <BsHouseDoor size={20} />,
         submenu: true,
         subMenuItems: [
-          { title: "Merchant", path: "/dashboard/merchant" },
-          { title: "Entrepreneur", path: "/dashboard/entrepreneur" },
-          { title: "Farmer Group", path: "/dashboard/farmer-group" },
-          { title: "Farmers", path: "/dashboard/farmers" }
+          { title: "Merchant", path: "/setup/merchant" },
+          { title: "Entrepreneur", path: "/setup/entrepreneur" },
+          { title: "Farmer Group", path: "/setup/farmer-group" },
+          { title: "Farmers", path: "/setup/farmers" }
         ]
         
+      },{
+        title: "Vendor",
+        path: "/vendor",
+        icon: <BsListUl size={20} />,
+        submenu: true,
+        subMenuItems: [
+          { title: "Invoice", path: "/invoices/invoicestable" },
+          { title: "Create Invoice", path: "/invoices/create" },
+          { title: "View Invoices", path: "/invoices/view" }
+        ]
       },
 
       {
