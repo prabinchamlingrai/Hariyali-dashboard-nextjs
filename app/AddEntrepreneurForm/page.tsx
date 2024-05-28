@@ -364,6 +364,7 @@ const AddMerchantForm: React.FC = () => {
                 <p className="text-red-500">{formErrors.district}</p>
               )}
             </div>
+            
             {/* Nagar Palika */}
             <div className="sm:col-span-2">
               <label

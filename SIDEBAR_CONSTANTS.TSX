@@ -224,9 +224,9 @@ export const SIDENAV_ITEMS: SideNavItemGroup[] = [
         submenu: true,
         subMenuItems: [
           { title: "Merchant", path: "/dashboard/merchant" },
-          { title: "Entrepreneur", path: "/dashboard/entrepreneur" },
-          { title: "Farmer Group", path: "/dashboard/farmer-group" },
-          { title: "Farmers", path: "/dashboard/farmers" }
+          { title: "Entrepreneur", path: "/dashboard/merchant/entrepreneur" },
+          { title: "Farmers", path: "/dashboard/merchant/entrepreneur/farmers"},
+          { title: "Farmers Group", path: "/dashboard/merchant/entrepreneur/farmers/farmersgroup"},
         ]
         
       },
